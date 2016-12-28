@@ -1,0 +1,39 @@
+Lire les man de :
+
+◦ ls 
+◦ opendir / readdir / closedir
+◦ stat / lstat
+◦ getpwuid / getgrgid
+◦ time / ctime
+◦ readlink
+◦ perror / strerror
+
+droit aussi a ◦ listxattr ◦ getxattr
+
+droit aussi a write, malloc, free, exit, et d'autres si elles sont justifiees (
+
+rien ou -1 = -1
+-l
+-t
+-r
+-R
+-a
+
+Les plus compliquees sont -l et -R (construire ls autour de ceux ci)
+
+-l -> alignement, format de la date ..
+
+gerer tous les types de fichier (man ls)
+
+gestion d'errreurs (toutes celles possibles !!!) y comprit celles de l utilisateur -> reproduire la gestion et sortir proprement
+
+ls -l dans /dev et ls -R /usr (!) -> pouvoir gerer correctement (sans fuite, segfault etc)
+
+bonus : -g, -d, -u, -f ,gestion des couleurs (similaire a -G), colonnes sans l'option -l (man 4 tty), gestion des ACL et attributs etendus
+
+optimiser : bonnes structures de donnes, algo de tri, efficaces en memoire & cpu ....
+
+
+a faire :
+1 - lib, makef, ...
+2 - parser de commandes.
